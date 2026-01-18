@@ -45,7 +45,7 @@ export const SteeringWheelPage: React.FC<SteeringWheelPageProps> = ({ onBack }) 
   const isLocked = !hoverContext && !!selectedContext;
 
   return (
-    <div className="min-h-screen w-full text-stone-800 overflow-hidden relative font-sans selection:bg-rose-200 selection:text-rose-900" style={{ backgroundColor: '#faf6f1', display: 'flex', flexDirection: 'row' }}>
+   <div className="min-h-screen w-full text-stone-800 overflow-hidden relative font-sans selection:bg-rose-200 selection:text-rose-900" style={{ backgroundColor: '#faf6f1', display: 'flex', flexDirection: 'row' }}>
 
       {/* Subtle texture overlay */}
       <div
