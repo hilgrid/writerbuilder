@@ -1,13 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-type Page = 'home' | 'steering-wheel';
-
-interface HeroProps {
-  onNavigate: (page: Page) => void;
-}
-
-const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
-  const goToWheel = () => onNavigate('steering-wheel');
+const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center vintage-bg overflow-hidden p-4">
       <div className="cartoon-card-bg relative z-20 transform transition-all duration-300 ease-out hover:rotate-1 hover:scale-[1.01] hover:-translate-y-1 hover:shadow-xl cursor-pointer" style={{ width: '560px', maxWidth: '90vw', aspectRatio: '3.5 / 2', padding: '2rem 3rem' }}>
@@ -26,7 +20,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
       <div className="flex flex-col items-center space-y-2 mt-8 z-20">
         <a href="https://hils.substack.com" target="_blank" rel="noopener noreferrer" className="text-stone-800 text-base hover:text-stone-600 hover:underline transition-colors">Writerbuilder newsletter</a>
         <a href="https://maven.com/hilary-gridley/ai-powered-people-management" target="_blank" rel="noopener noreferrer" className="text-stone-800 text-base hover:text-stone-600 hover:underline transition-colors">Supermanagers course</a>
-        <button onClick={goToWheel} className="text-stone-800 text-base hover:text-stone-600 hover:underline transition-colors cursor-pointer">AI steering wheel</button>
+        <Link to="/steeringwheel" className="text-stone-800 text-base hover:text-stone-600 hover:underline transition-colors">AI steering wheel</Link>
       </div>
     </section>
   );

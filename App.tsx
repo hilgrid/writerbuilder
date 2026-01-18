@@ -1,29 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import { SteeringWheelPage } from './components/steeringwheel/SteeringWheelPage';
 
-type Page = 'home' | 'steering-wheel';
-
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>('home');
-
-  const navigateTo = (page: Page) => {
-    setCurrentPage(page);
-  };
-
   return (
     <div className="min-h-screen selection:bg-rose-200 selection:text-rose-900">
-      {currentPage === 'home' && (
-        <main>
-          <div id="home">
-            <Hero onNavigate={navigateTo} />
-          </div>
-        </main>
-      )}
-
-      {currentPage === 'steering-wheel' && (
-        <SteeringWheelPage onBack={() => navigateTo('home')} />
-      )}
+      <Routes>
+        <Route path="/" element={
+          <main>
+            <div id="home">
+              <Hero />
+            </div>
+          </main>
+        } />
+        <Route path="/steeringwheel" element={<SteeringWheelPage />} />
+      </Routes>
     </div>
   );
 };

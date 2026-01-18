@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SteeringWheel } from './SteeringWheel';
 import { InfoPanel } from './InfoPanel';
 import { HoverContext } from './types';
 
-interface SteeringWheelPageProps {
-  onBack: () => void;
-}
-
-export const SteeringWheelPage: React.FC<SteeringWheelPageProps> = ({ onBack }) => {
+export const SteeringWheelPage: React.FC = () => {
+  const navigate = useNavigate();
   const [hoverContext, setHoverContext] = useState<HoverContext | null>(null);
   const [selectedContext, setSelectedContext] = useState<HoverContext | null>(null);
   const [dimensions, setDimensions] = useState({ width: 600, height: 600 });
@@ -89,7 +87,7 @@ export const SteeringWheelPage: React.FC<SteeringWheelPageProps> = ({ onBack }) 
 
       {/* Right Sidebar (Panel) */}
       <aside className="relative z-20 shadow-2xl" style={{ width: '400px', height: '100vh' }}>
-        <InfoPanel context={activeContext} isLocked={isLocked} onBack={onBack} />
+        <InfoPanel context={activeContext} isLocked={isLocked} onBack={() => navigate('/')} />
       </aside>
 
       <style>{`
