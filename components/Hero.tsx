@@ -49,11 +49,12 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         >
           Supermanagers course
         </a>
-        <button
-          onClick={() => onNavigate('steering-wheel')}
+       <button
+          onClick={function() { onNavigate('steering-wheel'); }}
           className="text-stone-800 text-base hover:text-stone-600 transition-colors text-left cursor-pointer"
         >
           AI steering wheel
+        </button>
         </button>
       </div>
 
