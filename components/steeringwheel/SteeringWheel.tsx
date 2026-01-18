@@ -15,8 +15,8 @@ export const SteeringWheel: React.FC<SteeringWheelProps> = ({ onHover, onClick, 
   const centerX = width / 2;
   const centerY = height / 2;
 
-  const innerRadius = radius * 0.15;
-  const ring1Radius = radius * 0.35;
+  const innerRadius = radius * 0.18;
+  const ring1Radius = radius * 0.38;
   const ring2Radius = radius * 0.55;
   const ring3Radius = radius * 0.95;
 
