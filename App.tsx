@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
+import About from './components/About';
 import { SteeringWheelPage } from './components/steeringwheel/SteeringWheelPage';
 
 const App: React.FC = () => {
@@ -14,6 +15,7 @@ const App: React.FC = () => {
             </div>
           </main>
         } />
+        <Route path="/about" element={<About />} />
         <Route path="/steeringwheel" element={<SteeringWheelPage />} />
       </Routes>
     </div>
