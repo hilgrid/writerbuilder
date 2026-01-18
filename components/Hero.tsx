@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center vintage-bg overflow-hidden p-4">
-      <div className="cartoon-card-bg relative z-20 transform transition-all duration-300 ease-out hover:rotate-1 hover:scale-[1.01] hover:-translate-y-1 hover:shadow-xl cursor-pointer" style={{ width: '560px', maxWidth: '90vw', aspectRatio: '3.5 / 2', padding: '2rem 3rem' }}>
+      <div className="cartoon-card-bg relative z-20 transform transition-all duration-300 ease-out hover:rotate-1 hover:scale-[1.01] hover:-translate-y-1 hover:shadow-xl cursor-pointer p-6 md:p-8 aspect-[3/2] md:aspect-[3.5/2]" style={{ width: '560px', maxWidth: '90vw' }}>
         <div className="h-full flex flex-col">
           <div className="flex-1 flex flex-col items-center justify-center">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-stone-800 font-sans">Hilary Gridley</h1>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-stone-800 font-sans text-center">Hilary Gridley</h1>
             <h2 className="text-xl md:text-2xl font-medium tracking-widest text-stone-500 uppercase mt-2">WRITERBUILDER</h2>
           </div>
           <div className="flex flex-row justify-between items-center w-full text-sm md:text-base font-bold tracking-widest text-stone-700 uppercase">
