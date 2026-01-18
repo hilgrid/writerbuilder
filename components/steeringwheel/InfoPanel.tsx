@@ -34,14 +34,7 @@ export const InfoPanel: React.FC<InfoPanelProps> = ({ context, isLocked, onBack 
             </p>
         </div>
 
-        {onBack && (
-          <button
-            onClick={onBack}
-            className="mt-8 px-6 py-3 bg-stone-800 text-white rounded-lg hover:bg-stone-700 transition-colors text-sm font-medium"
-          >
-            ← Back to Home
-          </button>
-        )}
+        
       </div>
     );
   }
@@ -97,18 +90,6 @@ export const InfoPanel: React.FC<InfoPanelProps> = ({ context, isLocked, onBack 
   return (
     <div className="h-full flex flex-col p-6 lg:p-8 border-t lg:border-t-0 lg:border-l border-stone-300 bg-stone-100/90 backdrop-blur-sm overflow-y-auto relative">
 
-      {/* Back button */}
-      {onBack && (
-        <button
-          onClick={onBack}
-          className="absolute top-4 left-4 px-3 py-1.5 bg-stone-200 text-stone-600 rounded-lg hover:bg-stone-300 transition-colors text-sm font-medium flex items-center gap-1"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back
-        </button>
-      )}
 
       {/* Locked Indicator */}
       {isLocked && (
