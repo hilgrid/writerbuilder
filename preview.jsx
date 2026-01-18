@@ -885,7 +885,7 @@ const SteeringWheelPage = ({ onBack }) => {
 // ============ HERO COMPONENT ============
 const Hero = ({ onNavigate }) => {
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden p-4" style={{ backgroundColor: '#ee8a82' }}>
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden p-4" style={{ backgroundColor: '#faf6f1' }}>
       <div className="w-full max-w-xl px-8 py-12 md:px-16 md:py-20 relative z-20 transform transition-all duration-300 ease-out hover:rotate-2 hover:scale-[1.03] hover:-translate-y-2 cursor-pointer" style={{ backgroundColor: '#fce8c3', border: '2px solid #332d21', boxShadow: '8px 8px 0px 0px rgba(51, 45, 33, 0.1)' }}>
         <div className="space-y-4 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-stone-800 font-sans">
