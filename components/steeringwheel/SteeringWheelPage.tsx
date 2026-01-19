@@ -43,7 +43,14 @@ export const SteeringWheelPage: React.FC = () => {
   const isLocked = !hoverContext && !!selectedContext;
 
   return (
-   <div className="min-h-screen w-full text-stone-800 overflow-hidden relative font-sans selection:bg-rose-200 selection:text-rose-900" style={{ backgroundColor: '#faf6f1', display: 'flex', flexDirection: 'row' }}>
+   <div className="min-h-screen w-full text-stone-800 overflow-x-hidden relative font-sans selection:bg-rose-200 selection:text-rose-900 flex flex-col lg:flex-row" style={{ backgroundColor: '#faf6f1' }}>
+
+      {/* Mobile Banner */}
+      <div className="lg:hidden bg-stone-200/80 border-b border-stone-300 px-4 py-3 text-center">
+        <p className="text-stone-600 text-sm">
+          This tool works better on desktop
+        </p>
+      </div>
 
       {/* Subtle texture overlay */}
       <div
@@ -56,8 +63,7 @@ export const SteeringWheelPage: React.FC = () => {
 
       {/* Main Visualization Area */}
       <main
-        className="relative z-10 flex items-center justify-center p-4 overflow-hidden"
-        style={{ flex: 1 }}
+        className="relative z-10 flex items-center justify-center p-4 flex-1 min-h-[50vh] lg:min-h-screen"
         onClick={handleBackgroundClick}
       >
         <div className="relative animate-fadeInScale transition-transform duration-500 ease-out">
@@ -69,8 +75,8 @@ export const SteeringWheelPage: React.FC = () => {
           />
         </div>
 
-        {/* Footer Credit */}
-        <div className="absolute bottom-10 left-0 right-0 text-center pointer-events-none px-4 pt-8">
+        {/* Footer Credit - hidden on mobile */}
+        <div className="hidden lg:block absolute bottom-10 left-0 right-0 text-center pointer-events-none px-4 pt-8">
           <p className="text-stone-500 text-xs md:text-sm tracking-wide font-light">
             made by adjective aficionado hilary gridley.{' '}
             <a
@@ -85,8 +91,8 @@ export const SteeringWheelPage: React.FC = () => {
         </div>
       </main>
 
-      {/* Right Sidebar (Panel) */}
-      <aside className="relative z-20 shadow-2xl" style={{ width: '400px', height: '100vh' }}>
+      {/* Right Sidebar (Panel) - full width on mobile, fixed width on desktop */}
+      <aside className="relative z-20 shadow-2xl w-full lg:w-[400px] min-h-[50vh] lg:h-screen">
         <InfoPanel context={activeContext} isLocked={isLocked} onBack={() => navigate('/')} />
       </aside>
 
