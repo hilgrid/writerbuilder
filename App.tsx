@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Hero from './components/Hero';
 import About from './components/About';
 import { SteeringWheelPage } from './components/steeringwheel/SteeringWheelPage';
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Route path="/about" element={<About />} />
         <Route path="/steeringwheel" element={<SteeringWheelPage />} />
       </Routes>
+      <Analytics />
     </div>
   );
 };
