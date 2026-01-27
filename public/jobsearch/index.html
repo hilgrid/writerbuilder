@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Job Search Toolkit | How to Get Noticed by Hiring Managers in 2026</title>
+    <meta name="description" content="7 free AI tools to help you stand out in the 2026 PM job market. Built from a Maven Lightning Lesson with Hilary Gridley, Ben Erez, and Nickey Skarstad.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PM Job Search Toolkit">
+    <meta property="og:description" content="7 free AI tools to help you stand out in the 2026 PM job market.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://writerbuilder.com/jobsearch">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Writerbuilder palette */
+            --color-bg: #d8887a;              /* Coral/salmon pink background */
+            --color-white: #f5ecd7;           /* Cream/butter card background */
+            --color-text: #2d2d2d;            /* Dark charcoal text */
+            --color-text-secondary: #5a5a5a;  /* Medium charcoal for secondary */
+            --color-accent: #2d2d2d;          /* Dark charcoal for accent/buttons */
+            --color-accent-hover: #1a1a1a;    /* Darker on hover */
+            --color-border: #c9bda8;          /* Warm tan border */
+            --color-phase1: #b86b5d;          /* Darker coral for phase 1 */
+            --color-phase2: #8b7355;          /* Warm brown for phase 2 */
+            --color-phase3: #6b8b7a;          /* Muted sage for phase 3 */
+            --max-width: 1100px;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 4rem;
+            --spacing-2xl: 6rem;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text);
+            background: rgba(216, 136, 122, 0.3);
+            padding: 0.375rem 0.875rem;
+            border-radius: 100px;
+            margin-bottom: var(--spacing-lg);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            max-width: 640px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-text);
+            border: 2px solid var(--color-text);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-text);
+            color: var(--color-white);
+        }
+
+        /* Journey Section */
+        .journey {
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-header p {
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .phase {
+            background: var(--color-white);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            border: 1px solid var(--color-border);
+        }
+
+        .phase-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .phase-1 .phase-number { background: var(--color-phase1); }
+        .phase-2 .phase-number { background: var(--color-phase2); }
+        .phase-3 .phase-number { background: var(--color-phase3); }
+
+        .phase h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .phase > p {
+            color: var(--color-text-secondary);
+            font-size: 0.9375rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .phase-tools {
+            list-style: none;
+        }
+
+        .phase-tools li {
+            padding: var(--spacing-sm) 0;
+            border-top: 1px solid var(--color-border);
+            font-size: 0.9375rem;
+        }
+
+        .phase-tools li:first-child {
+            border-top: none;
+        }
+
+        /* Tools Section */
+        .tools {
+            padding: var(--spacing-2xl) 0;
+            background: var(--color-white);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .tools-grid {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+
+        .tool-card {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: var(--spacing-lg);
+            align-items: start;
+            padding: var(--spacing-lg);
+            background: var(--color-white);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        @media (max-width: 640px) {
+            .tool-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tool-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .tool-card[data-phase="1"] .tool-number { background: var(--color-phase1); }
+        .tool-card[data-phase="2"] .tool-number { background: var(--color-phase2); }
+        .tool-card[data-phase="3"] .tool-number { background: var(--color-phase3); }
+
+        .tool-content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.375rem;
+        }
+
+        .tool-phase-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .tool-card[data-phase="1"] .tool-phase-label { color: var(--color-phase1); }
+        .tool-card[data-phase="2"] .tool-phase-label { color: var(--color-phase2); }
+        .tool-card[data-phase="3"] .tool-phase-label { color: var(--color-phase3); }
+
+        .tool-content p {
+            color: var(--color-text-secondary);
+            font-size: 0.9375rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .tool-content .tool-use {
+            font-size: 0.875rem;
+            font-style: italic;
+            color: var(--color-text-secondary);
+        }
+
+        .tool-cta {
+            align-self: center;
+        }
+
+        .tool-cta .btn {
+            white-space: nowrap;
+        }
+
+        .tool-attribution {
+            font-size: 0.8125rem;
+            color: var(--color-text-secondary);
+            margin-top: var(--spacing-sm);
+        }
+
+        .tool-attribution a {
+            color: var(--color-text);
+            text-decoration: underline;
+        }
+
+        .tool-attribution a:hover {
+            opacity: 0.7;
+        }
+
+        /* Meta Section */
+        .meta {
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .meta-content {
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .meta h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .meta-steps {
+            text-align: left;
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .meta-steps ol {
+            margin-left: 1.25rem;
+        }
+
+        .meta-steps p a {
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        .meta-steps p a:hover {
+            opacity: 0.7;
+        }
+
+        .meta-steps li {
+            padding: var(--spacing-sm) 0;
+            color: var(--color-text-secondary);
+        }
+
+        .meta-cta {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+        }
+
+        .meta-cta h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .meta-cta > p {
+            color: var(--color-text-secondary);
+            font-size: 0.9375rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .email-form {
+            display: flex;
+            gap: var(--spacing-sm);
+            max-width: 400px;
+            margin: 0 auto var(--spacing-md);
+        }
+
+        .email-form input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .email-form input:focus {
+            outline: none;
+            border-color: var(--color-text);
+        }
+
+        .email-disclaimer {
+            font-size: 0.8125rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* Watch Section */
+        .watch {
+            padding: var(--spacing-2xl) 0;
+            background: var(--color-white);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .watch-content {
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .watch h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .watch > .watch-content > p {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .watch-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .watch-stat {
+            text-align: center;
+        }
+
+        .watch-stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .watch-stat-label {
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+        }
+
+        .video-placeholder {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: var(--spacing-xl);
+            color: var(--color-text-secondary);
+        }
+
+        /* About Section */
+        .about {
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .about h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .about-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .about-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .about-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.9375rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .about-links {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .about-links a {
+            color: var(--color-text);
+            text-decoration: underline;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .about-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        .footer {
+            padding: var(--spacing-lg) 0;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--color-text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            margin-top: var(--spacing-sm);
+        }
+
+        .footer-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin: 0 var(--spacing-sm);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-text);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-label">Free Toolkit</span>
+            <h1>How to Get Noticed by PM Hiring Managers in 2026</h1>
+            <p class="hero-subtitle">7 AI tools built from a Maven Lightning Lesson</p>
+            <p class="hero-description">
+                The PM job market in 2026 is brutal. AI-generated applications have flooded every inbox.
+                These tools help you break through the noise, build proof of work, and write outreach that actually gets responses.
+            </p>
+            <div class="hero-ctas">
+                <a href="#tools" class="btn btn-primary">Get the tools ↓</a>
+                <a href="https://maven.com/p/1ea9d6/how-to-get-noticed-by-pm-hiring-managers-in-2026" target="_blank" class="btn btn-secondary">Watch the talk</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey -->
+    <section class="journey">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Journey</h2>
+                <p>Work through these three phases to stand out from the flood of AI-generated applications.</p>
+            </div>
+
+            <div class="phases">
+                <div class="phase phase-1">
+                    <div class="phase-number">1</div>
+                    <h3>Prepare Your Story</h3>
+                    <p>Before you apply anywhere, get clear on your narrative and where to focus your energy.</p>
+                    <ul class="phase-tools">
+                        <li>Job Fit Reality Check</li>
+                        <li>Least Charitable Read Strategist</li>
+                    </ul>
+                </div>
+
+                <div class="phase phase-2">
+                    <div class="phase-number">2</div>
+                    <h3>Build Your Evidence</h3>
+                    <p>In 2026, everyone has a polished resume. Stand out by making something.</p>
+                    <ul class="phase-tools">
+                        <li>Proof of Work Builder</li>
+                        <li>Spearfishing Demo Planner</li>
+                    </ul>
+                </div>
+
+                <div class="phase phase-3">
+                    <div class="phase-number">3</div>
+                    <h3>Make Contact</h3>
+                    <p>Get your pitch in front of the right person — cold, warm, or through a referral.</p>
+                    <ul class="phase-tools">
+                        <li>Cold Outreach Subject Line Generator</li>
+                        <li>Warm Intro Request Coach</li>
+                        <li>Forwardable Email Coach</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="tools" id="tools">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Tools</h2>
+                <p>Each tool is a Custom GPT you can use for free. Click to open in ChatGPT.</p>
+            </div>
+
+            <div class="tools-grid">
+                <!-- Tool 1 -->
+                <div class="tool-card" data-phase="1">
+                    <div class="tool-number">1</div>
+                    <div class="tool-content">
+                        <div class="tool-phase-label">Phase 1: Prepare</div>
+                        <h3>Job Fit Reality Check</h3>
+                        <p>Before you spend 5 hours on an application, make sure it's worth it. This tool gives you a quick gut-check on whether a role is a strong fit, a stretch, or a waste of time.</p>
+                        <span class="tool-use">Use this when: You're deciding where to focus your energy.</span>
+                    </div>
+                    <div class="tool-cta">
+                        <a href="https://chatgpt.com/g/g-6978e71d37d48191bb7247dc73963abd-job-fit-reality-check" target="_blank" class="btn btn-primary">Use tool →</a>
+                    </div>
+                </div>
+
+                <!-- Tool 2 -->
+                <div class="tool-card" data-phase="1">
+                    <div class="tool-number">2</div>
+                    <div class="tool-content">
+                        <div class="tool-phase-label">Phase 1: Prepare</div>
+                        <h3>Least Charitable Read Strategist</h3>
+                        <p>Hiring managers pattern-match fast. If your background doesn't obviously fit, they'll make assumptions — usually unflattering ones. This tool helps you identify those assumptions and craft a counter-narrative.</p>
+                        <span class="tool-use">Use this when: You're switching domains, levels, or company types.</span>
+                    </div>
+                    <div class="tool-cta">
+                        <a href="https://chatgpt.com/g/g-6978e59065d8819187d253f2a8b38649" target="_blank" class="btn btn-primary">Use tool →</a>
+                    </div>
+                </div>
+
+                <!-- Tool 3 -->
+                <div class="tool-card" data-phase="2">
+                    <div class="tool-number">3</div>
+                    <div class="tool-content">
+                        <div class="tool-phase-label">Phase 2: Build</div>
+                        <h3>Proof of Work Builder</h3>
+                        <p>Create a thinking artifact that shows how your mind works: a competitive analysis, product teardown, strategy memo, or user research synthesis. This tool helps you pick the right format and scope it to 3-5 hours.</p>
+                        <span class="tool-use">Use this when: You want to demonstrate strategic thinking without building a full prototype.</span>
+                    </div>
+                    <div class="tool-cta">
+                        <a href="https://chatgpt.com/g/g-6978e7854f2c81919c05244d8285b9a5-proof-of-work-builder" target="_blank" class="btn btn-primary">Use tool →</a>
+                    </div>
+                </div>
+
+                <!-- Tool 4 -->
+                <div class="tool-card" data-phase="2">
+                    <div class="tool-number">4</div>
+                    <div class="tool-content">
+                        <div class="tool-phase-label">Phase 2: Build</div>
+                        <h3>Spearfishing Demo Planner</h3>
+                        <p>Build a functional prototype or clickable demo that uses the company's product, APIs, or problem space. This tool helps you plan something you can ship in about a day — for roles you really want.</p>
+                        <span class="tool-use">Use this when: It's a dream role and you want to show you can actually build, not just analyze.</span>
+                        <p class="tool-attribution">Based on the <a href="https://github.com/fractal-bootcamp/bootcamp-monorepo/blob/main/advice/career/spearfishing.md" target="_blank">spearfishing framework</a> from Fractal Bootcamp.</p>
+                    </div>
+                    <div class="tool-cta">
+                        <a href="https://chatgpt.com/g/g-6978e80ebb64819199c0bd5c766f089c-spearfishing-demo-planner" target="_blank" class="btn btn-primary">Use tool →</a>
+                    </div>
+                </div>
+
+                <!-- Tool 5 -->
+                <div class="tool-card" data-phase="3">
+                    <div class="tool-number">5</div>
+                    <div class="tool-content">
+                        <div class="tool-phase-label">Phase 3: Contact</div>
+                        <h3>Cold Outreach Subject Line Generator</h3>
+                        <p>Most cold outreach fails at the subject line. "Interest in [Company]" gets ignored. This tool helps you write subject lines that are offers of value, not asks for time.</p>
+                        <span class="tool-use">Use this when: You're emailing someone cold and need to get opened.</span>
+                    </div>
+                    <div class="tool-cta">
+                        <a href="https://chatgpt.com/g/g-6978e9b2855c8191b3296c23c5a3ec6f-cold-outreach-subject-line-generator" target="_blank" class="btn btn-primary">Use tool →</a>
+                    </div>
+                </div>
+
+                <!-- Tool 6 -->
+                <div class="tool-card" data-phase="3">
+                    <div class="tool-number">6</div>
+                    <div class="tool-content">
+                        <div class="tool-phase-label">Phase 3: Contact</div>
+                        <h3>Warm Intro Request Coach</h3>
+                        <p>Warm intros are still the most effective way in. But asking wrong can be awkward — or damage relationships. This tool helps you make the ask the right way.</p>
+                        <span class="tool-use">Use this when: You have a mutual connection and want to do it right.</span>
+                    </div>
+                    <div class="tool-cta">
+                        <a href="https://chatgpt.com/g/g-6978e9f24e888191bea40a132d64d8b2-warm-intro-request-coach" target="_blank" class="btn btn-primary">Use tool →</a>
+                    </div>
+                </div>
+
+                <!-- Tool 7 -->
+                <div class="tool-card" data-phase="3">
+                    <div class="tool-number">7</div>
+                    <div class="tool-content">
+                        <div class="tool-phase-label">Phase 3: Contact</div>
+                        <h3>Forwardable Email Coach</h3>
+                        <p>The final step: write an email your mutual connection can forward with one click. This tool walks you through strategy, specifics, and drafting — then helps you find an edge that makes your email impossible to ignore.</p>
+                        <span class="tool-use">Use this when: You're ready to write the actual outreach email.</span>
+                    </div>
+                    <div class="tool-cta">
+                        <a href="https://chatgpt.com/g/g-6978ea635fc08191a820e2fb940f3ea9-forwardable-email-coach" target="_blank" class="btn btn-primary">Use tool →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meta -->
+    <section class="meta">
+        <div class="container">
+            <div class="meta-content">
+                <h2>I turned a 1-hour talk into 7 AI tools.</h2>
+
+                <div class="meta-steps">
+                    <p>I write a newsletter called <a href="https://hils.substack.com/" target="_blank">Writerbuilder</a> about the ways writing and building are increasingly the same skill. This project is an example of how content can also be a tool. Here's how I made it:</p>
+                    <ol>
+                        <li>Gave a Maven Lightning Lesson with Ben Erez and Nickey Skarstad</li>
+                        <li>Used the transcript to develop prompts for 7 tools based on our conversation</li>
+                        <li>Built this website to connect them using Claude</li>
+                    </ol>
+                    <p style="margin-top: 1rem;">For more experiments like this, follow along:</p>
+                    <a href="https://hils.substack.com/" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">Subscribe to Writerbuilder →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Watch -->
+    <section class="watch" id="watch">
+        <div class="container">
+            <div class="watch-content">
+                <h2>Watch the original talk</h2>
+                <p>This toolkit is based on "How to Get Noticed by PM Hiring Managers in 2026" — a Maven Lightning Lesson recorded January 22, 2026.</p>
+
+                <div class="watch-stats">
+                    <div class="watch-stat">
+                        <div class="watch-stat-value">59 min</div>
+                        <div class="watch-stat-label">Runtime</div>
+                    </div>
+                    <div class="watch-stat">
+                        <div class="watch-stat-value">3,600</div>
+                        <div class="watch-stat-label">Signups</div>
+                    </div>
+                </div>
+
+                <a href="https://maven.com/p/1ea9d6/how-to-get-noticed-by-pm-hiring-managers-in-2026" target="_blank" class="btn btn-primary">Watch on Maven →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="container">
+            <h2>Based on expertise from</h2>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Hilary Gridley</h3>
+                    <p>Former Head of Core Product at WHOOP. Building tools that help people work better.</p>
+                    <div class="about-links">
+                        <a href="https://hils.substack.com/" target="_blank">Newsletter</a>
+                        <a href="https://www.linkedin.com/in/hilarygridley/" target="_blank">LinkedIn</a>
+                        <a href="https://maven.com/hilary-gridley/ai-powered-people-management" target="_blank">Maven Course</a>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <h3>Ben Erez</h3>
+                    <p>PM coach and creator of the top-rated PM interview course on Maven.</p>
+                    <div class="about-links">
+                        <a href="https://maven.com/ben-erez/pm-interview" target="_blank">Maven Course</a>
+                        <a href="https://www.insiderloops.com/" target="_blank">Insider Loops</a>
+                        <a href="https://www.linkedin.com/in/benerez/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <h3>Nickey Skarstad</h3>
+                    <p>Director of Product at Duolingo. 15 years in consumer product.</p>
+                    <div class="about-links">
+                        <a href="https://www.linkedin.com/in/nickeyskarstad/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Hilary Gridley</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/hilarygridley/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
